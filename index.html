@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Essentials by uMmAmine</title>
+<link rel="icon" href="images/logo2.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader-overlay" id="loader">
+  <div class="loader-logo"><span>HE</span></div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- Header -->
+<header id="header">
+  <div class="logo-section">
+    <img src="images/logo_2.png" alt="Home Essentials Logo">
+    <div class="logo-text">
+      <h1>HOME ESSENTIALS</h1>
+      <span>By uMmAmine</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#accueil" class="active">Accueil</a>
+    <a href="#categories">Cat&eacute;gories</a>
+    <a href="#produits">Produits</a>
+    <a href="#temoignages">Avis</a>
+    <a href="#apropos">&Agrave; Propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#accueil" onclick="closeMobileMenu()">Accueil</a>
+  <a href="#categories" onclick="closeMobileMenu()">Cat&eacute;gories</a>
+  <a href="#produits" onclick="closeMobileMenu()">Produits</a>
+  <a href="#temoignages" onclick="closeMobileMenu()">Avis Clients</a>
+  <a href="#apropos" onclick="closeMobileMenu()">&Agrave; Propos</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- Promo Banner -->
+<div class="promo-banner" id="promoBanner">
+  <div class="promo-banner-inner">
+    <span>&#127881; <strong>-15% sur la literie</strong> &mdash; Offre limit&eacute;e !</span>
+    <span>&#128666; <strong>Livraison gratuite</strong> &agrave; Niamey</span>
+    <span>&#128172; Commandez directement via <strong>WhatsApp</strong></span>
+    <span>&#127881; <strong>-15% sur la literie</strong> &mdash; Offre limit&eacute;e !</span>
+    <span>&#128666; <strong>Livraison gratuite</strong> &agrave; Niamey</span>
+    <span>&#128172; Commandez directement via <strong>WhatsApp</strong></span>
+  </div>
+  <button class="promo-close" onclick="document.getElementById('promoBanner').classList.add('closed')" aria-label="Fermer">&#10005;</button>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <div class="hero-badge">&#10024; Niamey, Niger</div>
+    <h2>Sublimez votre<br><em>Int&eacute;rieur</em></h2>
+    <p>D&eacute;couvrez notre s&eacute;lection de vaisselle, literie et &eacute;lectrom&eacute;nager pour transformer votre maison en un v&eacute;ritable cocon de bien-&ecirc;tre.</p>
+    <div class="hero-buttons">
+      <a href="#produits" class="btn-primary">Voir nos produits <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="https://wa.me/22774150303" target="_blank" class="btn-secondary">Nous contacter</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span>D&eacute;filer</span><div class="scroll-line"></div></div>
+</section>
+
+<!--
+  ================================================================
+  IMAGES CATEGORIES : copiez vos images dans images/ avec ces noms :
+    images/cat-vaisselle.jpg
+    images/cat-literie.jpg
+    images/cat-electromenager.jpg
+  Si l'image n'existe pas, l'emoji s'affiche a la place.
+  ================================================================
+-->
+<section class="categories-section" id="categories">
+  <div class="section-label reveal">Nos Cat&eacute;gories</div>
+  <h2 class="section-title reveal">Tout pour votre <em>maison</em></h2>
+  <p class="section-subtitle reveal">Explorez nos trois univers soigneusement s&eacute;lectionn&eacute;s pour sublimer chaque pi&egrave;ce de votre int&eacute;rieur.</p>
+  <div class="categories-grid">
+    <div class="category-card" onclick="filterFromCategory('vaisselle')">
+      <img src="images/cat-vaisselle.jpg" alt="Vaisselle" class="category-card-img" onerror="this.remove()">
+      <div class="category-icon">&#127869;&#65039;</div>
+      <div class="category-info"><h3>Vaisselle</h3><p>Assiettes, verres &amp; couverts</p></div>
+    </div>
+    <div class="category-card" onclick="filterFromCategory('literie')">
+      <img src="images/cat-literie.jpg" alt="Literie" class="category-card-img" onerror="this.remove()">
+      <div class="category-icon">&#128716;&#65039;</div>
+      <div class="category-info"><h3>Literie</h3><p>Draps, couettes &amp; oreillers</p></div>
+    </div>
+    <div class="category-card" onclick="filterFromCategory('electromenager')">
+      <img src="images/cat-electromenager.jpg" alt="Electromenager" class="category-card-img" onerror="this.remove()">
+      <div class="category-icon">&#9889;</div>
+      <div class="category-info"><h3>&Eacute;lectrom&eacute;nager</h3><p>Cuisine &amp; maison connect&eacute;e</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-us" id="pourquoi">
+  <div class="section-label reveal">Pourquoi nous choisir</div>
+  <h2 class="section-title reveal">La diff&eacute;rence <em>Home Essentials</em></h2>
+  <div class="why-grid">
+    <div class="why-card reveal"><div class="why-icon">&#127942;</div><h4>Qualit&eacute; Premium</h4><p>Chaque produit est rigoureusement s&eacute;lectionn&eacute; pour vous garantir durabilit&eacute; et &eacute;l&eacute;gance.</p></div>
+    <div class="why-card reveal"><div class="why-icon">&#128176;</div><h4>Prix Accessibles</h4><p>Le luxe &agrave; port&eacute;e de main. Nous n&eacute;gocions les meilleurs prix pour vous.</p></div>
+    <div class="why-card reveal"><div class="why-icon">&#128666;</div><h4>Livraison Rapide</h4><p>Livraison dans tout Niamey. Recevez vos commandes en un temps record.</p></div>
+    <div class="why-card reveal"><div class="why-icon">&#128172;</div><h4>Service Client</h4><p>Une &eacute;quipe disponible sur WhatsApp pour r&eacute;pondre &agrave; toutes vos questions.</p></div>
+  </div>
+</section>
+
+<!--
+  ================================================================
+  IMAGES PRODUITS : copiez vos photos dans images/ avec ces noms :
+    images/produit-1.jpg   (Service de Table Royal)
+    images/produit-2.jpg   (Verres Cristallin)
+    images/produit-3.jpg   (Set Tasses a Cafe)
+    images/produit-4.jpg   (Assiettes Boheme)
+    images/produit-5.jpg   (Bol en Ceramique)
+    images/produit-6.jpg   (Theiere Marocaine)
+    images/produit-7.jpg   (Plateau de Service)
+    images/produit-8.jpg   (Couverts Dores)
+    images/produit-9.jpg   (Parure de Lit Satin)
+    images/produit-10.jpg  (Couette Premium)
+    images/produit-11.jpg  (Oreillers Memoire)
+    images/produit-12.jpg  (Drap-Housse Jersey)
+    images/produit-13.jpg  (Couverture Polaire)
+    images/produit-14.jpg  (Protege-Matelas)
+    images/produit-15.jpg  (Coussins Decoratifs)
+    images/produit-16.jpg  (Mixeur Multifonction)
+    images/produit-17.jpg  (Bouilloire Inox)
+    images/produit-18.jpg  (Robot Cuisine Pro)
+    images/produit-19.jpg  (Fer a Repasser)
+    images/produit-20.jpg  (Ventilateur Tour)
+    images/produit-21.jpg  (Grille-Pain)
+    images/produit-22.jpg  (Machine a Cafe)
+    images/produit-23.jpg  (Aspirateur Compact)
+  Si une image n'existe pas, l'emoji s'affiche automatiquement.
+  ================================================================
+-->
+<section class="products-section" id="produits">
+  <div class="section-label reveal">Nos Produits</div>
+  <h2 class="section-title reveal">Notre <em>Collection</em></h2>
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all" onclick="setFilter('all')"><span>Tous</span></button>
+    <button class="filter-btn" data-filter="vaisselle" onclick="setFilter('vaisselle')"><span>&#127869;&#65039; Vaisselle</span></button>
+    <button class="filter-btn" data-filter="literie" onclick="setFilter('literie')"><span>&#128716;&#65039; Literie</span></button>
+    <button class="filter-btn" data-filter="electromenager" onclick="setFilter('electromenager')"><span>&#9889; &Eacute;lectrom&eacute;nager</span></button>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+  <div class="pagination" id="pagination"></div>
+</section>
+
+<!-- Special Offer -->
+<section class="offer-banner reveal-scale">
+  <div class="offer-inner">
+    <div class="offer-box">
+      <div class="offer-badge">&#128293; Offre Sp&eacute;ciale</div>
+      <h3>-15% sur toute la Literie</h3>
+      <p>Profitez de cette offre exceptionnelle pour renouveler votre literie avec des produits de qualit&eacute; premium.</p>
+      <div class="offer-countdown" id="countdown">
+        <div class="countdown-item"><div class="countdown-num" id="cd-days">07</div><div class="countdown-label">Jours</div></div>
+        <div class="countdown-item"><div class="countdown-num" id="cd-hours">12</div><div class="countdown-label">Heures</div></div>
+        <div class="countdown-item"><div class="countdown-num" id="cd-mins">45</div><div class="countdown-label">Minutes</div></div>
+        <div class="countdown-item"><div class="countdown-num" id="cd-secs">30</div><div class="countdown-label">Secondes</div></div>
+      </div>
+      <a href="https://wa.me/22774150303?text=Bonjour%20!%20Je%20souhaite%20profiter%20de%20l%27offre%20-15%25%20sur%20la%20literie." target="_blank" class="btn-primary">Profiter de l'offre <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="temoignages">
+  <div style="text-align:center;">
+    <div class="section-label">T&eacute;moignages</div>
+    <h2 class="section-title">Ce que disent <em>nos clients</em></h2>
+  </div>
+  <div class="testimonials-slider">
+    <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonial-card"><div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><p class="testimonial-text">"Service exceptionnel ! J'ai command&eacute; un service de table complet et la qualit&eacute; est incroyable. Livraison rapide et emballage soign&eacute;."</p><div class="testimonial-author"><div class="testimonial-avatar">F</div><div><div class="testimonial-name">Fatima M.</div><div class="testimonial-role">Cliente fid&egrave;le</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><p class="testimonial-text">"Ma parure de lit en satin est magnifique ! Le tissu est doux et luxueux. uMmAmine propose des produits qu'on ne trouve pas ailleurs &agrave; Niamey."</p><div class="testimonial-author"><div class="testimonial-avatar">A</div><div><div class="testimonial-name">A&iuml;cha K.</div><div class="testimonial-role">Cliente depuis 2025</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><p class="testimonial-text">"J'ai offert le set de tasses dor&eacute;es &agrave; ma m&egrave;re pour son anniversaire. Elle &eacute;tait ravie ! Merci pour la qualit&eacute; et les prix abordables."</p><div class="testimonial-author"><div class="testimonial-avatar">I</div><div><div class="testimonial-name">Ibrahim D.</div><div class="testimonial-role">Client satisfait</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><p class="testimonial-text">"Le mixeur multifonction que j'ai achet&eacute; est top ! Puissant, robuste et facile &agrave; utiliser. La communication sur WhatsApp est tr&egrave;s fluide."</p><div class="testimonial-author"><div class="testimonial-avatar">M</div><div><div class="testimonial-name">Mariama B.</div><div class="testimonial-role">Cliente r&eacute;guli&egrave;re</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><p class="testimonial-text">"Home Essentials c'est devenu ma r&eacute;f&eacute;rence pour tout ce qui est maison. Chaque commande est une belle surprise."</p><div class="testimonial-author"><div class="testimonial-avatar">H</div><div><div class="testimonial-name">Hadiza S.</div><div class="testimonial-role">Ambassadrice</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div><p class="testimonial-text">"Rapport qualit&eacute;-prix imbattable ! Les coussins d&eacute;coratifs sont magnifiques et la couverture polaire est exactement ce qu'il me fallait."</p><div class="testimonial-author"><div class="testimonial-avatar">Z</div><div><div class="testimonial-name">Zara O.</div><div class="testimonial-role">Nouvelle cliente</div></div></div></div>
+    </div>
+    <div class="testimonials-nav">
+      <button class="test-nav-btn" onclick="scrollTestimonials(-1)">&#8249;</button>
+      <button class="test-nav-btn" onclick="scrollTestimonials(1)">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+  <div class="section-label reveal">Simple &amp; Rapide</div>
+  <h2 class="section-title reveal">Comment <em>commander</em> ?</h2>
+  <div class="steps-grid">
+    <div class="step-card reveal"><div class="step-number">01</div><div class="step-icon">&#128269;</div><h4>Parcourez</h4><p>Explorez notre catalogue et trouvez les produits qui vous plaisent.</p><div class="step-connector"></div></div>
+    <div class="step-card reveal"><div class="step-number">02</div><div class="step-icon">&#128172;</div><h4>Contactez-nous</h4><p>Cliquez sur "Commander" pour nous &eacute;crire directement sur WhatsApp.</p><div class="step-connector"></div></div>
+    <div class="step-card reveal"><div class="step-number">03</div><div class="step-icon">&#128230;</div><h4>Recevez</h4><p>On confirme votre commande et on vous livre rapidement &agrave; Niamey.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label reveal">FAQ</div>
+  <h2 class="section-title reveal">Questions <em>fr&eacute;quentes</em></h2>
+  <div class="faq-list">
+    <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">Comment passer une commande ?<span class="faq-arrow">&#9662;</span></button><div class="faq-answer"><p>Parcourez notre catalogue, cliquez sur "Commander" sur le produit qui vous int&eacute;resse, et vous serez redirig&eacute; vers WhatsApp.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">Quels sont les d&eacute;lais de livraison ?<span class="faq-arrow">&#9662;</span></button><div class="faq-answer"><p>La livraison &agrave; Niamey se fait sous 24 &agrave; 48 heures.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">Quels modes de paiement acceptez-vous ?<span class="faq-arrow">&#9662;</span></button><div class="faq-answer"><p>Esp&egrave;ces &agrave; la livraison, virements bancaires, et paiement mobile (Orange Money, Airtel Money).</p></div></div>
+    <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">Peut-on retourner un produit ?<span class="faq-arrow">&#9662;</span></button><div class="faq-answer"><p>Oui, contactez-nous dans les 48h suivant la livraison pour un &eacute;change ou remboursement.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-question" onclick="toggleFaq(this)">Livrez-vous en dehors de Niamey ?<span class="faq-arrow">&#9662;</span></button><div class="faq-answer"><p>Oui, nous livrons dans d'autres villes du Niger. Contactez-nous sur WhatsApp.</p></div></div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" id="apropos">
+  <div class="about-inner">
+    <div class="section-label">&Agrave; Propos</div>
+    <h2 class="section-title">Home Essentials<br>by <em>uMmAmine</em></h2>
+    <p class="about-text">Passionn&eacute;e par la d&eacute;coration et le confort de la maison, uMmAmine s&eacute;lectionne pour vous les meilleurs produits pour sublimer chaque pi&egrave;ce de votre int&eacute;rieur.</p>
+    <div class="about-stats">
+      <div class="stat"><div class="stat-number" data-count="500">0</div><div class="stat-label">Produits</div></div>
+      <div class="stat"><div class="stat-number" data-count="1000">0</div><div class="stat-label">Clients satisfaits</div></div>
+      <div class="stat"><div class="stat-number" data-count="3">0</div><div class="stat-label">Cat&eacute;gories</div></div>
+      <div class="stat"><div class="stat-number" data-count="2">0</div><div class="stat-label">Ans d'exp&eacute;rience</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+  <div class="section-label reveal">Contactez-nous</div>
+  <h2 class="section-title reveal">Restons en <em>contact</em></h2>
+  <div class="contact-grid">
+    <a href="https://wa.me/22774150303" target="_blank" class="contact-card reveal">
+      <div class="contact-icon" style="background:rgba(37,211,102,0.1)">&#128241;</div>
+      <div class="contact-card-text"><h4>WhatsApp</h4><p>+227 74 15 03 03</p></div>
+    </a>
+    <a href="mailto:homeessentialbyummamine&#64;gmail.com" class="contact-card reveal">
+      <div class="contact-icon" style="background:rgba(45,74,45,0.08)">&#9993;</div>
+      <div class="contact-card-text"><h4>Email</h4><p>homeessentialbyummamine &#64;gmail.com</p></div>
+    </a>
+    <div class="contact-card reveal">
+      <div class="contact-icon" style="background:rgba(212,184,150,0.2)">&#128205;</div>
+      <div class="contact-card-text"><h4>Localisation</h4><p>Niamey, Niger</p></div>
+    </div>
+  </div>
+  <div class="social-links reveal">
+    <a href="https://wa.me/22774150303" target="_blank" class="social-link" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <a href="#" class="social-link" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+    <a href="#" class="social-link" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.2 8.2 0 005.58 2.18V11.7a4.83 4.83 0 01-3.77-1.24V6.69h3.77z"/></svg></a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><h3>Home Essentials</h3><p>Votre destination pour sublimer votre int&eacute;rieur avec des produits de qualit&eacute; &agrave; Niamey, Niger.</p></div>
+    <div class="footer-col"><h4>Navigation</h4><a href="#accueil">Accueil</a><a href="#categories">Cat&eacute;gories</a><a href="#produits">Produits</a><a href="#temoignages">Avis Clients</a></div>
+    <div class="footer-col"><h4>Cat&eacute;gories</h4><a href="#" onclick="filterFromCategory('vaisselle');return false;">Vaisselle</a><a href="#" onclick="filterFromCategory('literie');return false;">Literie</a><a href="#" onclick="filterFromCategory('electromenager');return false;">&Eacute;lectrom&eacute;nager</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="https://wa.me/22774150303" target="_blank">WhatsApp</a><a href="mailto:homeessentialbyummamine&#64;gmail.com">Email</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+  </div>
+  <div class="footer-bottom"><p>&#169; 2026 <a href="#">Home Essentials by uMmAmine</a> &mdash; Niamey, Niger. Tous droits r&eacute;serv&eacute;s.</p></div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script src="script.js"></script>
+</body>
+</html>
