@@ -5,12 +5,6 @@
 const products = [
   { id:1, name:"Service de Table Royal", desc:"Set complet 24 pièces en porcelaine", price:"45 000", category:"electromenager", image:"images/produit-1.jpg", emoji:"\u{1F37D}", badge:"new" },
   { id:2, name:"Verres Cristallin", desc:"Lot de 6 verres en cristal élégant", price:"18 000", category:"electromenager", image:"images/produit-2.jpg", emoji:"\u{1F942}", badge:null },
-  { id:3, name:"Set Tasses à Café", desc:"6 tasses avec soucoupes dorées", price:"12 000", category:"vaisselle", image:"images/produit-3.jpg", emoji:"\u2615", badge:"promo" },
-  { id:4, name:"Assiettes Bohème", desc:"Set de 12 assiettes motif floral", price:"28 000", category:"vaisselle", image:"images/produit-4.jpg", emoji:"\u{1FAD5}", badge:null },
-  { id:5, name:"Bol en Céramique", desc:"Lot de 4 bols artisanaux", price:"8 500", category:"vaisselle", image:"images/produit-5.jpg", emoji:"\u{1F963}", badge:null },
-  { id:6, name:"Théière Marocaine", desc:"Théière traditionnelle en inox doré", price:"15 000", category:"vaisselle", image:"images/produit-6.jpg", emoji:"\u{1FAD6}", badge:"new" },
-  { id:7, name:"Plateau de Service", desc:"Plateau en bois et résine époxy", price:"22 000", category:"vaisselle", image:"images/produit-7.jpg", emoji:"\u{1F376}", badge:null },
-  { id:8, name:"Couverts Dorés", desc:"Ménagère 24 pièces dorée", price:"35 000", category:"vaisselle", image:"images/produit-8.jpg", emoji:"\u{1F374}", badge:"promo" },
   { id:9, name:"Parure de Lit Satin", desc:"Parure complète 6 pièces satin", price:"38 000", category:"literie", image:"images/produit-9.jpg", emoji:"\u{1F6CF}", badge:"new" },
   { id:10, name:"Couette Premium", desc:"Couette 4 saisons microfibre", price:"25 000", category:"literie", image:"images/produit-10.jpg", emoji:"\u{1F6CB}", badge:null },
   { id:11, name:"Oreillers Mémoire", desc:"Lot de 2 oreillers à mémoire de forme", price:"18 000", category:"literie", image:"images/produit-11.jpg", emoji:"\u{1F4A4}", badge:null },
