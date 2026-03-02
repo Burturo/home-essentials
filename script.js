@@ -3,8 +3,6 @@
 //   images/produit-1.jpg, images/produit-2.jpg, ... images/produit-23.jpg
 // Si l'image n'existe pas encore, l'emoji s'affiche automatiquement.
 const products = [
-  { id:1, name:"Service de Table Royal", desc:"Set complet 24 pièces en porcelaine", price:"45 000", category:"electromenager", image:"images/produit-1.jpg", emoji:"\u{1F37D}", badge:"new" },
-  { id:2, name:"Verres Cristallin", desc:"Lot de 6 verres en cristal élégant", price:"18 000", category:"electromenager", image:"images/produit-2.jpg", emoji:"\u{1F942}", badge:null },
   { id:9, name:"Parure de Lit Satin", desc:"Parure complète 6 pièces satin", price:"38 000", category:"literie", image:"images/produit-9.jpg", emoji:"\u{1F6CF}", badge:"new" },
   { id:10, name:"Couette Premium", desc:"Couette 4 saisons microfibre", price:"25 000", category:"literie", image:"images/produit-10.jpg", emoji:"\u{1F6CB}", badge:null },
   { id:11, name:"Oreillers Mémoire", desc:"Lot de 2 oreillers à mémoire de forme", price:"18 000", category:"literie", image:"images/produit-11.jpg", emoji:"\u{1F4A4}", badge:null },
@@ -12,37 +10,63 @@ const products = [
   { id:13, name:"Couverture Polaire", desc:"Couverture douce 200x240cm", price:"15 000", category:"literie", image:"images/produit-13.jpg", emoji:"\u{1F9F6}", badge:"promo" },
   { id:14, name:"Protège-Matelas", desc:"Protection imperméable premium", price:"10 000", category:"literie", image:"images/produit-14.jpg", emoji:"\u2728", badge:null },
   { id:15, name:"Coussins Décoratifs", desc:"Lot de 4 coussins brodés", price:"14 000", category:"literie", image:"images/produit-15.jpg", emoji:"\u{1FAA1}", badge:"new" },
-  { id:16, name:"Mixeur Multifonction", desc:"Blender 1200W + accessoires", price:"55 000", category:"electromenager", image:"images/produit-16.jpg", emoji:"\u{1F50C}", badge:"new" },
-  { id:17, name:"Bouilloire Inox", desc:"Bouilloire 1.7L thermostat", price:"18 000", category:"electromenager", image:"images/produit-17.jpg", emoji:"\u{1FAD7}", badge:null },
-  { id:18, name:"Robot Cuisine Pro", desc:"Robot pétrin avec bol 5L", price:"85 000", category:"electromenager", image:"images/produit-18.jpg", emoji:"\u{1F916}", badge:"promo" },
-  { id:19, name:"Fer à Repasser", desc:"Fer vapeur 2400W semelle céramique", price:"22 000", category:"electromenager", image:"images/produit-19.jpg", emoji:"\u{1F454}", badge:null },
-  { id:20, name:"Ventilateur Tour", desc:"Ventilateur colonne télécommandé", price:"35 000", category:"electromenager", image:"images/produit-20.jpg", emoji:"\u{1F300}", badge:null },
-  { id:21, name:"Grille-Pain", desc:"Toaster 2 fentes inox brossé", price:"15 000", category:"electromenager", image:"images/produit-21.jpg", emoji:"\u{1F35E}", badge:null },
-  { id:22, name:"Machine à Café", desc:"Cafetière filtre programmable", price:"28 000", category:"electromenager", image:"images/produit-22.jpg", emoji:"\u2615", badge:"new" },
-  { id:23, name:"Aspirateur Compact", desc:"Aspirateur sans sac 800W", price:"48 000", category:"electromenager", image:"images/produit-23.jpg", emoji:"\u{1F9F9}", badge:null },
+  //Catégories electromenager
+  { id:17, name:"Avinas mixeur multifonctions Contenance 2l", desc:"Mixeur multifonctions puissance élevée, bol 2L", price:"45 000", category:"electromenager", image:"images/produit-17.jpg", emoji:"\u{1FAD7}", badge:null },
+
+  { id:18, name:"Hoffmans Blender contenance 2l", desc:"Blender puissant avec bol grande capacité 2L", price:"55 000", category:"electromenager", image:"images/produit-18.jpg", emoji:"\u{1F916}", badge:"promo" },
+
+  { id:19, name:"RESS mixeur contenance 2l écran tactile", desc:"Mixeur digital avec écran tactile et bol 2L", price:"45 000", category:"electromenager", image:"images/produit-19.jpg", emoji:"\u{1F454}", badge:null },
+
+  { id:20, name:"Sokany multifonctions 3l", desc:"Robot multifonctions grande capacité 3L", price:"30 000", category:"electromenager", image:"images/produit-20.jpg", emoji:"\u{1F300}", badge:null },
+
+  { id:21, name:"Robot pâtissier 8l", desc:"Robot pâtissier professionnel avec bol 8L", price:"75 000", category:"electromenager", image:"images/produit-21.jpg", emoji:"\u{1F35E}", badge:null },
+
+  { id:22, name:"Batteuse électrique", desc:"Batteuse électrique pratique pour pâtisserie", price:"10 000", category:"electromenager", image:"images/produit-22.jpg", emoji:"\u2615", badge:"new" },
+
+  { id:23, name:"Toster sokany multiplie usage", desc:"Grille-pain multifonction usage domestique", price:"35 000", category:"electromenager", image:"images/produit-23.jpg", emoji:"\u{1F9F9}", badge:null },
 
   //Catégories vaisselle
-  { id:24, name:"Service Dîner 32pcs Élégance", desc:"Service complet 6 personnes, assemblage de couleurs premium", price:"160 000", category:"vaisselle", image:"images/produit-24.jpg", emoji:"\u{1F37D}", badge:"new" },
-  { id:25, name:"Service Terre Cuite 16pcs", desc:"Ensemble artisanal en terre cuite", price:"45 000", category:"vaisselle", image:"images/produit-25.jpg", emoji:"\u{1FAD5}", badge:null },
-  { id:26, name:"Service Porcelaine Blanc Raffiné", desc:"Service dîner blanc en porcelaine haut de gamme", price:"45 000", category:"vaisselle", image:"images/produit-26.jpg", emoji:"\u{1F963}", badge:null },
-  { id:27, name:"Service Dîner 16pcs Classique", desc:"Service complet élégant 16 pièces", price:"45 000", category:"vaisselle", image:"images/produit-27.jpg", emoji:"\u{1F374}", badge:null },
-  { id:28, name:"Service 26pcs avec Service à Thé", desc:"Ensemble complet avec service à thé assorti", price:"120 000", category:"vaisselle", image:"images/produit-28.jpg", emoji:"\u2615", badge:"promo" },
-  { id:29, name:"Thermos Grande Capacité 6L", desc:"Conservation 24h garantie haute qualité", price:"60 000", category:"vaisselle", image:"images/produit-29.jpg", emoji:"\u{1FAD6}", badge:"new" },
-  { id:30, name:"Ensemble Thermos 4 Tasses", desc:"Contenance 3L, 4L, 5L et 6L", price:"0", category:"vaisselle", image:"images/produit-30.jpg", emoji:"\u{1FAD6}", badge:null },
-  { id:31, name:"Ensemble Thermos 3pcs Premium", desc:"Disponible noir doré, argenté et doré", price:"160 000", category:"vaisselle", image:"images/produit-31.jpg", emoji:"\u{1FAD6}", badge:"promo" },
-  { id:32, name:"Ensemble Thermos 3pcs Élégant", desc:"Thermos repas 3L, 2L et 1L blanc marron ou noir", price:"100 000", category:"vaisselle", image:"images/produit-32.jpg", emoji:"\u{1FAD6}", badge:null },
-  { id:33, name:"Chaffing Dish 2pcs 3L", desc:"Contenant porcelaine utilisable en baking dish", price:"65 000", category:"vaisselle", image:"images/produit-33.jpg", emoji:"\u{1F372}", badge:null },
-  { id:34, name:"Service Porcelaine 16pcs Premium", desc:"Ensemble élégant en porcelaine", price:"55 000", category:"vaisselle", image:"images/produit-34.jpg", emoji:"\u{1F963}", badge:null },
-  { id:35, name:"Service 26pcs Moderne", desc:"Design moderne complet", price:"160 000", category:"vaisselle", image:"images/produit-35.jpg", emoji:"\u{1F37D}", badge:"new" },
-  { id:36, name:"Service Dîner + Service à Thé 6 Pers", desc:"Ensemble complet avec théière", price:"120 000", category:"vaisselle", image:"images/produit-36.jpg", emoji:"\u2615", badge:null },
-  { id:37, name:"Chaffing Dish 8L Réception", desc:"Idéal pour cérémonies et buffet", price:"50 000", category:"vaisselle", image:"images/produit-37.jpg", emoji:"\u{1F372}", badge:null },
-  { id:38, name:"Ensemble Blanc Doré 2pcs", desc:"Design élégant blanc et doré", price:"25 000", category:"vaisselle", image:"images/produit-38.jpg", emoji:"\u2728", badge:null },
-  { id:39, name:"Chaffing Dish 5.5L", desc:"Maintien au chaud longue durée", price:"45 000", category:"vaisselle", image:"images/produit-39.jpg", emoji:"\u{1F372}", badge:null },
-  { id:40, name:"Nappe de Table + 4 Housses", desc:"Dimensions 2m20 x 1m40", price:"35 000", category:"vaisselle", image:"images/produit-40.jpg", emoji:"\u{1F9F5}", badge:null },
-  { id:41, name:"Ronds de Serviette Lot de 6", desc:"Accessoires élégants pour table", price:"12 000", category:"vaisselle", image:"images/produit-41.jpg", emoji:"\u2728", badge:null },
-  { id:42, name:"Rond de Serviette Unité", desc:"Vendu à l'unité", price:"3 000", category:"vaisselle", image:"images/produit-42.jpg", emoji:"\u2728", badge:null },
-  { id:43, name:"Anneaux Bismillah", desc:"Décoration de table élégante", price:"4 500", category:"vaisselle", image:"images/produit-43.jpg", emoji:"\u2728", badge:"new" },
-  { id:44, name:"Rond de Serviette Standard", desc:"Accessoire de table décoratif", price:"2 000", category:"vaisselle", image:"images/produit-44.jpg", emoji:"\u2728", badge:null },
+  { id:24, name:"Service Dîner 32pcs Élégance", desc:"Service complet pour 6 personnes, design élégant", price:"160 000", category:"vaisselle", image:"images/produit-24.jpg", emoji:"\u{1F37D}", badge:"new" },
+
+  { id:25, name:"Service Terre Cuite 16pcs", desc:"Service artisanal en terre cuite, 16 pièces", price:"45 000", category:"vaisselle", image:"images/produit-25.jpg", emoji:"\u{1FAD5}", badge:null },
+
+  { id:26, name:"Service Porcelaine Blanc Raffiné", desc:"Service de table en porcelaine blanche raffinée", price:"45 000", category:"vaisselle", image:"images/produit-26.jpg", emoji:"\u{1F963}", badge:null },
+
+  { id:27, name:"Service Dîner 16pcs Classique", desc:"Service de table classique complet 16 pièces", price:"45 000", category:"vaisselle", image:"images/produit-27.jpg", emoji:"\u{1F374}", badge:null },
+
+  { id:28, name:"Service 26pcs avec Service à Thé", desc:"Ensemble 26 pièces avec service à thé assorti", price:"120 000", category:"vaisselle", image:"images/produit-28.jpg", emoji:"\u2615", badge:"promo" },
+
+  { id:29, name:"Thermos Grande Capacité 6L", desc:"Thermos haute conservation chaleur et froid 6L", price:"60 000", category:"vaisselle", image:"images/produit-29.jpg", emoji:"\u{1FAD6}", badge:"new" },
+
+  { id:30, name:"Ensemble Thermos 4 Tasses", desc:"Ensemble thermos avec contenances 3L, 4L, 5L et 6L", price:"0", category:"vaisselle", image:"images/produit-30.jpg", emoji:"\u{1FAD6}", badge:null },
+
+  { id:31, name:"Ensemble Thermos 3pcs Premium", desc:"Thermos premium disponible noir doré, argenté et doré", price:"160 000", category:"vaisselle", image:"images/produit-31.jpg", emoji:"\u{1FAD6}", badge:"promo" },
+
+  { id:32, name:"Ensemble Thermos 3pcs Élégant", desc:"Thermos repas 3L, 2L et 1L pour maintien au chaud", price:"100 000", category:"vaisselle", image:"images/produit-32.jpg", emoji:"\u{1FAD6}", badge:null },
+
+  { id:33, name:"Chaffing Dish 2pcs 3L", desc:"Lot de 2 chafing dish 3L avec récipient en porcelaine", price:"65 000", category:"vaisselle", image:"images/produit-33.jpg", emoji:"\u{1F372}", badge:null },
+
+  { id:34, name:"Tasse Thermos 3pcs", desc:"Ensemble de tasses thermos pour conservation chaleur", price:"100 000", category:"vaisselle", image:"images/produit-34.jpg", emoji:"\u{1F963}", badge:null },
+
+  { id:35, name:"Chafing Dish 3L", desc:"Chafing dish pratique pour maintien au chaud 3L", price:"65 000", category:"vaisselle", image:"images/produit-35.jpg", emoji:"\u{1F37D}", badge:"new" },
+
+  { id:36, name:"Service Dîner + Service à Thé 6 Pers", desc:"Service complet dîner avec théière pour 6 personnes", price:"120 000", category:"vaisselle", image:"images/produit-36.jpg", emoji:"\u2615", badge:null },
+
+  { id:37, name:"Chaffing Dish 8L Réception", desc:"Chafing dish grande capacité 8L pour buffet", price:"50 000", category:"vaisselle", image:"images/produit-37.jpg", emoji:"\u{1F372}", badge:null },
+
+  { id:38, name:"Ensemble Blanc Doré 2pcs", desc:"Ensemble décoratif blanc et doré 2 pièces", price:"25 000", category:"vaisselle", image:"images/produit-38.jpg", emoji:"\u2728", badge:null },
+
+  { id:39, name:"Chaffing Dish 5.5L", desc:"Chafing dish 5.5L maintien chaleur longue durée", price:"45 000", category:"vaisselle", image:"images/produit-39.jpg", emoji:"\u{1F372}", badge:null },
+
+  { id:40, name:"Chaffing Dish 8L", desc:"Chafing dish grande capacité 8L professionnel", price:"100 000", category:"vaisselle", image:"images/produit-40.jpg", emoji:"\u{1F9F5}", badge:null },
+
+  { id:41, name:"Ensemble Blanc Doré", desc:"Accessoires de table design blanc et doré", price:"12 000", category:"vaisselle", image:"images/produit-41.jpg", emoji:"\u2728", badge:null },
+
+  { id:42, name:"Chaffing Dish 5L", desc:"Chafing dish capacité 5L maintien au chaud", price:"45 000", category:"vaisselle", image:"images/produit-42.jpg", emoji:"\u2728", badge:null },
+
+  { id:43, name:"Anneaux Bismillah", desc:"Anneaux décoratifs élégants pour table", price:"35 000", category:"vaisselle", image:"images/produit-43.jpg", emoji:"\u2728", badge:"new" },
+
+  { id:44, name:"Rond de Serviette Standard", desc:"Rond de serviette décoratif pour table", price:"2 000", category:"vaisselle", image:"images/produit-44.jpg", emoji:"\u2728", badge:null },
 ];
 
 // ========== STATE ==========
